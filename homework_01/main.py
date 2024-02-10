@@ -55,10 +55,16 @@ def filter_numbers(int_list: [int], filter_type: str) -> [int]:
     if filter_type not in [ODD, EVEN, PRIME]:
         error = f"Указан не верный тип фильтра {filter_type}. Фильтр может принимать одно из значений ({ODD}, {EVEN}, {PRIME})"
         raise Exception(error)
-
+    f = []
     if filter_type == ODD:
-        return filter(filter_odd_numbers, int_list)
+        f = filter(filter_odd_numbers, int_list)
     elif filter_type == EVEN:
-        return filter(filter_even_numbers, int_list)
+        f = filter(filter_even_numbers, int_list)
     elif filter_type == PRIME:
-        return filter(filter_prime_numbers, int_list)
+        f = filter(filter_prime_numbers, int_list)
+
+    return list(f)
+
+if __name__ == '__main__':
+    t = filter_numbers([1, 2, 3], ODD)
+    print (t)
