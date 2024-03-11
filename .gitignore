@@ -141,5 +141,6 @@ dmypy.json
 cython_debug/
 /test.xlsx
 /test_res.xlsx
-/main.ipynb
-/excel_test.py
+/workbook/main.ipynb
+/workbook/excel_test.py
+/workbook/
