@@ -6,13 +6,17 @@
 """
 
 
-class LowFuelError(Exception):
+class VehicleError(Exception):
     pass
 
 
-class NotEnoughFuel(Exception):
+class LowFuelError(VehicleError):
     pass
 
 
-class CargoOverload(Exception):
+class NotEnoughFuel(VehicleError):
+    pass
+
+
+class CargoOverload(VehicleError):
     pass

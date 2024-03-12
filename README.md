@@ -5,3 +5,5 @@
 [homework_01](homework_01) - Git, shell 
 
 [homework_02](homework_02) - Датаклассы. Виртуальное окружение 
+
+[homework_03](homework_03) - Docker; системы контроля зависимостей
