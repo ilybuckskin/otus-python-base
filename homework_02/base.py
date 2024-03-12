@@ -23,5 +23,3 @@ class Vehicle(ABC):
         if self.fuel < total_consumption:
             raise exceptions.NotEnoughFuel
         self.fuel -= total_consumption
-
-    pass
