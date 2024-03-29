@@ -1,9 +1,17 @@
 FROM python:3.11-buster
+ENV POETRY_VERSION=1.8.2
+ENV POETRY_VENV=/opt/poetry-venv
+ENV PATH="${PATH}:${POETRY_VENV}/bin"
+ENV POETRY_VIRTUALENVS_CREATE=false
+ENV PATH="/root/.local/bin:${PATH}"
 
+RUN python3 -m venv $POETRY_VENV \
+    && $POETRY_VENV/bin/pip install -U pip setuptools \
+    && $POETRY_VENV/bin/pip install poetry==${POETRY_VERSION}
 
-COPY requirements.txt main.py ./
+COPY poetry.lock pyproject.toml main.py ./
 
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN poetry install
 
 EXPOSE 8000
 
